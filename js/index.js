@@ -1,6 +1,7 @@
 $(function () {
     let type = 1;
     let type_text = "";
+    let music = false;
     $(".input_qh li").on("click", function () {
         let name = $(this).data("fun");
         if (name === "feedback") {
@@ -45,4 +46,15 @@ $(function () {
             }
         });
     });
+    $(".music").on("click", function () {
+        if (music) {
+            music = false;
+            $("audio")[0].pause();
+            $(".music").removeClass("music_an");
+        } else {
+            music = true;
+            $("audio")[0].play();
+            $(".music").addClass("music_an");
+        }
+    })
 })
