@@ -33,7 +33,10 @@ $(function () {
                     Title: "提示",
                     Content: e.message,
                     BtnL: "确定",
-                    FunL: $.DialogByZ.Close()
+                    FunL: function(){
+                        $.DialogByZ.Close();
+                        $("textarea").val("");
+                    }
                 });
             },
             error: function (e) {
